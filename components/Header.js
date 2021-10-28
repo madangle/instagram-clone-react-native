@@ -46,7 +46,7 @@ export class Header extends Component {
     }
 }
 
-styles = StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
         justifyContent: 'space-between',
         alignItems: 'center',
