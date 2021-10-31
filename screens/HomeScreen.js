@@ -3,6 +3,7 @@ import { View, Text, SafeAreaView, ScrollView, StyleSheet } from 'react-native'
 import Header from './../components/Header';
 import Stories from './../components/Stories';
 import Post from './../components/Post';
+import BottomTabs from './../components/BottomTabs';
 import { POSTS } from './../data/users';
 
 const HomeScreen = () => {
@@ -18,6 +19,7 @@ const HomeScreen = () => {
                 }
                 
             </ScrollView>
+            <BottomTabs />
         </SafeAreaView>
     )
 }

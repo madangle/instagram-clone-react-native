@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native'
 // import { Divider } from 'react-native-elements'
+import {POSTFOOTERICONS} from '../data/users';
 
 const Post = ({post}) => {
    return (
@@ -8,6 +9,11 @@ const Post = ({post}) => {
             {/* add divider over here */}
             <PostHeader post={post} />
             <PostImage post={post} />
+            <PostFooter />
+            <Likes likes={post.likes}/>
+            <Caption caption={post.caption}/>
+            <Comments post={post}/>
+            <CommentsList post={post}/>
         </View>
     )
 }
@@ -49,6 +55,83 @@ const PostImage = ({post}) => (
     </View>
 )
 
+const PostFooter = () => (
+    <View style={{ marginHorizontal: 15, marginTop: 10, flexDirection: 'row'}}>
+        <View style={styles.leftFooterIconsContainer}>
+            <Icon
+                imgStyle={styles.footerIcon} 
+                imgUrl={POSTFOOTERICONS[0].imageUrl}
+            />
+            <Icon
+                imgStyle={styles.footerIcon} 
+                imgUrl={POSTFOOTERICONS[0].imageUrl}
+            />
+            <Icon
+                imgStyle={styles.footerIcon} 
+                imgUrl={POSTFOOTERICONS[0].imageUrl}
+            />
+        </View>
+        <View style={{ flex: 1, alignItems: 'flex-end'}}>
+            <Icon
+                imgStyle={styles.footerIcon} 
+                imgUrl={POSTFOOTERICONS[0].imageUrl}
+            />
+        </View>
+    </View>
+)
+
+const Icon = ({imgStyle, imgUrl}) => {
+    return (<TouchableOpacity>
+        <Image style={imgStyle} source={{uri: imgUrl}} />
+    </TouchableOpacity>)
+}
+
+const Likes = ({likes}) => (
+    <View style={{flexDirection: 'row', marginTop: 5}}>
+        <Text style={{color: 'white', fontWeight: '600'}} >
+        {likes} likes
+        </Text>
+    </View>
+)
+
+const Caption = ({caption}) => (
+    <View style={{flexDirection: 'row', marginTop: 5}}>
+        <Text style={{color: 'white', fontWeight: '600'}} >
+            <Text style={{fontWeight: '800', marginLeft: 5}} >
+                Rishikesh &nbsp;
+            </Text>
+        {caption}
+        </Text>
+    </View>
+)
+
+const Comments = ({ post }) => (
+    <View style={{marginTop: 5}}>
+        {
+            !!post.comments.length && (
+                <Text style={{ color: 'grey'}}> 
+                    View { post.comments.length > 1 ? 'all' : '' } {post.comments.length} { post.comments.length > 1 ? 'comments' : 'comment' }
+                </Text>
+            )
+        }
+       
+    </View>
+)
+
+const CommentsList = ({ post }) => (
+    <View style={{marginTop: 5}}>
+        { post.comments.map((comment, index) => (
+            <Text style={{color: 'white'}} key={index}>
+                <Text style={{fontWeight: '800'}}>
+                    {comment.user} &nbsp;
+                </Text>
+                <Text style={{fontWeight: '600', marginLeft: 2}}>
+                    {comment.comment}
+                </Text>
+            </Text>
+        ))}
+    </View>
+)
 const styles = StyleSheet.create({ 
     story:{
         width: 50,
@@ -61,6 +144,14 @@ const styles = StyleSheet.create({
     postImage: {
         height: '100%',
         resizeMode: 'cover'
+    },
+    footerIcon: {
+        width: 33,
+        height: 33,
+        marginRight: 15
+    },
+    leftFooterIconsContainer : {
+        flexDirection: 'row'
     }
 })
 export default Post

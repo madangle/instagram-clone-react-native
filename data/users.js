@@ -111,4 +111,57 @@ export const POSTS = [
 			}
 		]
 	}
+]; 
+
+export const POSTFOOTERICONS = [
+	{
+		name: 'Like',
+		imageUrl: 'https://img.icons8.com/ios-filled/500/ffffff/love.png',
+		likedImageUrl: 'https://img.icons8.com/ios-filled/500/ffffff/love.png'
+	},
+	{
+		name: 'Comment',
+		imageUrl: 'https://img.icons8.com/ios-filled/500/ffffff/speech-bubble.png',
+	},
+	{
+		name: 'Share',
+		imageUrl: 'https://img.icons8.com/ios-filled/500/ffffff/speech-bubble.png',
+	},
+	{
+		name: 'Save',
+		imageUrl: 'https://img.icons8.com/ios-filled/500/ffffff/speech-bubble.png',
+	}
+];
+
+export const BOTTOMTABICONS = [
+	{
+	  name: 'Home',
+	  active: 'https://img.icons8.com/fluency-systems-filled/144/ffffff/home.png',
+	  inactive:
+		'https://img.icons8.com/fluency-systems-regular/48/ffffff/home.png',
+	},
+	{
+	  name: 'Search',
+	  active: 'https://img.icons8.com/ios-filled/500/ffffff/search--v1.png',
+	  inactive: 'https://img.icons8.com/ios/500/ffffff/search--v1.png',
+	},
+	{
+	  name: 'Reels',
+	  active: 'https://img.icons8.com/ios-filled/50/ffffff/instagram-reel.png',
+	  inactive: 'https://img.icons8.com/ios/500/ffffff/instagram-reel.png',
+	},
+	{
+	  name: 'Shop',
+	  active:
+		'https://img.icons8.com/fluency-systems-filled/48/ffffff/shopping-bag-full.png',
+	  inactive:
+		'https://img.icons8.com/fluency-systems-regular/48/ffffff/shopping-bag-full.png',
+	},
+	{
+	  name: 'Profile',
+	  active:
+		'https://instagram.ffjr1-2.fna.fbcdn.net/v/t51.2885-19/s150x150/11410457_1810527605872169_8618150031758721024_a.jpg?_nc_ht=instagram.ffjr1-2.fna.fbcdn.net&_nc_ohc=qB713r0kp_AAX-cC_Gz&edm=AP_V10EBAAAA&ccb=7-4&oh=648f187e03cc55b0a2bb527fa5279f57&oe=6180B054&_nc_sid=4f375e',
+	  inactive:
+		'https://instagram.ffjr1-2.fna.fbcdn.net/v/t51.2885-19/s150x150/11410457_1810527605872169_8618150031758721024_a.jpg?_nc_ht=instagram.ffjr1-2.fna.fbcdn.net&_nc_ohc=qB713r0kp_AAX-cC_Gz&edm=AP_V10EBAAAA&ccb=7-4&oh=648f187e03cc55b0a2bb527fa5279f57&oe=6180B054&_nc_sid=4f375e',
+	},
 ]
